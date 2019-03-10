@@ -31,6 +31,17 @@ return [
     'setting' => 'Cài Đặt',
     'dashbroad' => 'Bảng Điều Khiển',
     'profile' => 'Cá Nhân',
-    'admin' => 'Quản Lý'
+    'admin' => 'Quản Lý',
+    'lastest' => 'Mới Nhất',
+    'home' => 'Trang Chủ',
+    'introduce' => 'Giới Thiệu',
+    'channel' => 'Kênh',
+    'subscribe' => 'Theo Dõi',
+    'followers' => 'Người Theo Dõi',
+    'fan' => 'Fan',
+    'featured' => 'Đặc Sắc',
+    'most_view' => 'Xem Nhiều',
+    'news_letter' => 'NewsLetter',
+    'archive' => 'Lưu Trữ',
 
 ];

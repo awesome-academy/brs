@@ -31,6 +31,17 @@ return [
     'setting' => 'Setting',
     'dashbroad' => 'DashBroad',
     'profile' => 'Profile',
-    'admin' => 'Admin'
+    'admin' => 'Admin',
+    'lastest' => 'Mới Nhất',
+    'home' => 'Trang Chủ',
+    'introduce' => 'Giới Thiệu',
+    'channel' => 'Kênh',
+    'subscribe' => 'Theo Dõi',
+    'followers' => 'Người Theo Dõi',
+    'fan' => 'Fan',
+    'featured' => 'Đặc Sắc',
+    'most_view' => 'Xem Nhiều',
+    'news_letter' => 'NewsLetter',
+    'archive' => 'Lưu Trữ',
 
 ];
