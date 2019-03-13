@@ -19,7 +19,10 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i>@lang('content.setting')</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>@lang('content.logout')</a>
+                <li>
+                    <a class="dropdown-item">
+                        @lang('content.logout')
+                    </a>
                 </li>
             </ul>
         </li>

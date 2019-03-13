@@ -34,6 +34,7 @@
     {{ Html::script(asset('admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js')) }}
     {{ Html::script(asset('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')) }}
     {{ Html::script(asset('admin_asset/js/example.js')) }}
+    {{ Html::script(asset('js/logout.js')) }}
 </body>
 
 </html>
