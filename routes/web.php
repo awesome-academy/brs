@@ -25,3 +25,7 @@ Route::get('/category/{id}', [
     'as' => 'category',
     'uses' => 'PublicController@bookCategory'
 ]);
+
+Route::get('/ajax', 'BookReviewController@ajax');
+
+Route::resource('add', 'BookReviewController');
