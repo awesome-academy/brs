@@ -26,11 +26,14 @@
 
     @include('public.layout.footer')
 
+    {{ Html::script(asset('js/jquery-1.11.0.min.js')) }}
+    {{ Html::script(asset('/js/ajax.js')) }}
     {{ Html::script(asset('public_asset/js/jquery/jquery-2.2.4.min.js')) }}
     {{ Html::script(asset('public_asset/js/bootstrap/popper.min.js')) }}
     {{ Html::script(asset('public_asset/js/bootstrap/bootstrap.min.js')) }}
     {{ Html::script(asset('public_asset/js/plugins/plugins.js')) }}
     {{ Html::script(asset('public_asset/js/active.js')) }}
+
 </body>
 
 </html>

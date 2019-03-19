@@ -35,4 +35,10 @@ class Book extends Model
 
         return $this->morphMany(App::Follow, 'follow_book');
     }
+
+    public function images()
+    {
+
+        return $this->hasMany(App::Image);
+    }
 }

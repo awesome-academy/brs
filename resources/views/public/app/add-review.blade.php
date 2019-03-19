@@ -11,29 +11,28 @@
                         <h5>@lang('content.submit') @lang('content.book')</h5>
                     </div>
 
+                    @include('common.errors')
+                    @include('common.message')
+
                     <div class="video-info mt-30">
                         {!! Form::open(['method' => 'POST','files' => true]) !!}
                             <div class="form-group">
-                                {{ Form::label('task-name', trans('content.task')) }}
-                                {{ Form::file('file', ['class' => 'form-control-file']) }}
+                                {{ Form::label('content_review', trans('content.content_review')) }}
+                                {{ Form::textarea('content_review', null, ['class' => 'form-control']) }}
                             </div>
                             <div class="form-group">
-                                {{ Form::label('task-name', trans('content.task')) }}
-                                {{ Form::text('name', null, ['class' => 'form-control']) }}
+                                {{ Form::label('content.category', trans('content.category')) }}
+                                {!! Form::select('category', $categories, null, ['class'=>'form-control', 'id' => 'category']) !!}
                             </div>
                             <div class="form-group">
-                                {{ Form::label('task-name', trans('content.task')) }}
-                                <textarea name="video-description" class="form-control" cols="30" rows="10"></textarea>
+                                {{ Form::label('content.book', trans('content.book')) }}
+                                {!! Form::select('book_id', $categories, null, ['class'=>'form-control', 'id' => 'book']) !!}
                             </div>
                             <div class="form-group">
-                                {{ Form::label('task-name', trans('content.task')) }}
-                                {{ Form::text('name', null, ['class' => 'form-control']) }}
+                                {{ Form::label('content.status', trans('content.status')) }}
+                                {!! Form::select('status',['0' => 'Chua Doc','1'=>'Da Doc'], null, ['class'=>'form-control', 'id' => 'category']) !!}
                             </div>
-                            <div class="form-group">
-                                {{ Form::label('task-name', trans('content.task')) }}
-                                {{ Form::select('video-catagory', ['key' => 'value'], ['class' => 'form-control']) }}
-                            </div>
-                            {!! Form::submit( trans('content.add_task'), ['class' => 'btn mag-btn mt-30']) !!}
+                            {!! Form::submit( trans('content.add'), ['class' => 'btn mag-btn mt-30']) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>

@@ -10,8 +10,8 @@ class Categories extends Model
 
     protected $fillable = [
         'id',
-        'name',
-        'parent_id',
+        'cate_name',
+        'parent_id'
     ];
 
     public function books()
