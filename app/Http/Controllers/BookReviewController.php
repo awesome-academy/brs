@@ -8,6 +8,7 @@ use App\Model\Review;
 use App\Model\Categories;
 use App\Http\Requests\ReviewRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class BookReviewController extends Controller
 {
@@ -16,6 +17,12 @@ class BookReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+        $categories = Categories::all();
+        View::share('categories', $categories);
+    }
+
     public function ajax()
     {
         $cat_id = Request::get('cat_id');
@@ -26,9 +33,9 @@ class BookReviewController extends Controller
 
     public function index()
     {
-        $categories = Categories::all('cate_name');
+        $category = Categories::pluck('cate_name');
 
-        return view('public.app.add-review', compact('categories'));
+        return view('public.app.add-review', compact('category'));
     }
 
     /**

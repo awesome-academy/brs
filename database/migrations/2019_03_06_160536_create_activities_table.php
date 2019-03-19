@@ -16,13 +16,13 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->string('body_comment');
-            $table->integer('commentable_id');
-            $table->string('commentable_type');
-            $table->integer('likeable_id');
-            $table->string('likeable_type');
-            $table->integer('ratingable_id');
-            $table->string('ratingable_type');
+            $table->string('body_comment')->nullable();
+            $table->integer('commentable_id')->nullable();
+            $table->string('commentable_type')->nullable();
+            $table->integer('likeable_id')->nullable();
+            $table->string('likeable_type')->nullable();
+            $table->integer('ratingable_id')->nullable();
+            $table->string('ratingable_type')->nullable();
             $table->timestamps();
         });
     }

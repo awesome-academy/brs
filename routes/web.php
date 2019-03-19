@@ -29,3 +29,5 @@ Route::get('/category/{id}', [
 Route::get('/ajax', 'BookReviewController@ajax');
 
 Route::resource('add', 'BookReviewController');
+
+Route::post('/comment', 'CommentController@store')->name('comment.add');

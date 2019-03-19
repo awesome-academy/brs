@@ -22,11 +22,11 @@
                             </div>
                             <div class="form-group">
                                 {{ Form::label('content.category', trans('content.category')) }}
-                                {!! Form::select('category', $categories, null, ['class'=>'form-control', 'id' => 'category']) !!}
+                                {!! Form::select('category', $category, null, ['class'=>'form-control', 'id' => 'category']) !!}
                             </div>
                             <div class="form-group">
                                 {{ Form::label('content.book', trans('content.book')) }}
-                                {!! Form::select('book_id', $categories, null, ['class'=>'form-control', 'id' => 'book']) !!}
+                                {!! Form::select('book_id', $category, null, ['class'=>'form-control', 'id' => 'book']) !!}
                             </div>
                             <div class="form-group">
                                 {{ Form::label('content.status', trans('content.status')) }}

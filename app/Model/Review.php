@@ -20,36 +20,36 @@ class Review extends Model
     public function book()
     {
 
-        return $this->belongTo(App::Book);
+        return $this->belongsTo(Book::class);
     }
 
     public function user()
     {
 
-        return $this->belongTo(App::User);
+        return $this->belongsTo(User::class);
     }
 
     public function activities()
     {
 
-        return $this->hasMany(App::Activities);
+        return $this->hasMany(Activities::class);
     }
 
     public function comments()
     {
 
-        return $this->morphMany(App::Activities, 'commentable');
+        return $this->morphMany(Activities::class, 'commentable');
     }
 
     public function likes()
     {
 
-        return $this->morphMany(App::Activities, 'likeable');
+        return $this->morphMany(Activities::class, 'likeable');
     }
 
     public function ratings()
     {
 
-        return $this->morphMany(App::Activities, 'ratingable');
+        return $this->morphMany(Activities::class, 'ratingable');
     }
 }
