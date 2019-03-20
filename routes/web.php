@@ -29,3 +29,5 @@ Route::get('/category/{id}', [
 Route::get('/ajax', 'BookReviewController@ajax');
 
 Route::resource('add', 'BookReviewController');
+
+Route::resource('books', 'BookController');
