@@ -8,7 +8,7 @@
         <div class="col-12 col-xl-8">
             <div class="post-details-content bg-white mb-30 p-30 box-shadow">
                 <div class="blog-thumb mb-30">
-                    <img src="img/bg-img/50.jpg" alt="">
+                    <img src="https://salt.tikicdn.com/cache/550x550/media/catalog/product/1/0/10_dieu_ran_danh_cho_doanh_nhan_copy_.jpg" alt="">
                 </div>
                 <div class="blog-content">
                     <div class="post-meta">
@@ -28,22 +28,6 @@
                         <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> @lang('content.share')</a>
                     </div>
 
-                </div>
-            </div>
-
-            <div class="related-post-area bg-white mb-30 px-30 pt-30 box-shadow">
-                <div class="section-heading">
-                    <h5>@lang('content.related_book')</h5>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single-blog-post style-4 mb-30">
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/28.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 

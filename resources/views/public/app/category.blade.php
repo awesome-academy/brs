@@ -11,15 +11,15 @@
                     <div class="single-catagory-post d-flex flex-wrap">
 
                         <div class="post-thumbnail bg-img">
-                            <a href="#" class="video-play"><i class="fa fa-play"></i></a>
+                            <img src="https://salt.tikicdn.com/cache/550x550/media/catalog/product/1/0/10_dieu_ran_danh_cho_doanh_nhan_copy_.jpg" alt="">
                         </div>
 
                         <div class="post-content">
                             <div class="post-meta">
                                 <a href="#">{{ $item->publication_date }}</a>
-                                <a href="#">{{ $item->book_title }}</a>
+                                <a href="{{ route('book.detail', [$item->book_id]) }}">{{ $item->author }}</a>
                             </div>
-                            <a href="#" class="post-title">{{ $item->author }}</a>
+                            <a href="{{ route('book.detail', [$item->book_id]) }}" class="post-title">{{ $item->book_title }}</a>
                             <p>
                                 {{ $item->content_review }}
                             </p>

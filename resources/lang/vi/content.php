@@ -43,5 +43,15 @@ return [
     'most_view' => 'Xem Nhiều',
     'news_letter' => 'NewsLetter',
     'archive' => 'Lưu Trữ',
+    'fans' => 'Người Hâm Mộ',
+    'submit' => 'Xác Nhận',
+    'suggest' => 'Yêu Cầu',
+    'add_task' => 'Thêm',
+    'content' => 'Nội Dung',
+    'mail' => 'Email',
+    'name' => 'Tên',
+    'book_title' => 'Tựa Sách',
+    'notification' => 'Thông Báo',
+    'share' => 'Chia Sẻ'
 
 ];

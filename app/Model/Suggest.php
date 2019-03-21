@@ -13,12 +13,6 @@ class Suggest extends Model
         'content',
         'author',
         'book_title',
-        'user_id',
+        'mail'
     ];
-
-    public function user()
-    {
-
-        return $this->belongTo(App::User);
-    }
 }

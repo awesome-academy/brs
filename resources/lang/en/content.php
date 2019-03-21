@@ -43,5 +43,15 @@ return [
     'most_view' => 'Xem Nhiều',
     'news_letter' => 'NewsLetter',
     'archive' => 'Lưu Trữ',
+    'fans' => 'Fans',
+    'submit' => 'Submit',
+    'suggest' => 'Suggest',
+    'add_task' => 'Add',
+    'content' => 'Content',
+    'mail' => 'Email',
+    'name' => 'Name',
+    'book_title' => 'Book Title',
+    'notification' => 'Notification',
+    'share' => 'Share',
 
 ];

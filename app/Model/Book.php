@@ -15,30 +15,25 @@ class Book extends Model
         'author',
         'number_page',
         'category_id',
-        'image_id',
+        'image_name',
+        'image_path',
     ];
 
     public function category()
     {
 
-        return $this->belongTo(App::Categories);
+        return $this->belongsTo(Categories::class);
     }
 
     public function reviews()
     {
 
-        return $this->hasMany(App::Review);
+        return $this->hasMany(Review::class);
     }
 
     public function followBooks()
     {
 
-        return $this->morphMany(App::Follow, 'follow_book');
-    }
-
-    public function images()
-    {
-
-        return $this->hasMany(App::Image);
+        return $this->morphMany(Follow::class, 'follow_book');
     }
 }

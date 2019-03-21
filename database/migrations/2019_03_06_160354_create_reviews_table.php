@@ -19,6 +19,7 @@ class CreateReviewsTable extends Migration
             $table->integer('user_id');
             $table->tinyInteger('status');
             $table->string('content_review');
+            $table->integer('rating_point');
             $table->timestamps();
         });
     }

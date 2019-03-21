@@ -16,21 +16,30 @@
                     </div>
 
                     <div class="contact-form-area">
-                        {!! Form::open(['method' => 'POST','files' => true]) !!}
+                        {!! Form::open(['route' => 'mail.send', 'method' => 'POST','files' => true]) !!}
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ Form::text('name', null, ['class' => 'form-control']) }}
+                                        {{ Form::label('content_review', trans('content.mail')) }}
+                                        {{ Form::text('mail', null, ['class' => 'form-control']) }}
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ Form::text('email', null, ['class' => 'form-control']) }}
+                                        {{ Form::label('content_review', trans('content.author')) }}
+                                        {{ Form::text('author', null, ['class' => 'form-control']) }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ Form::label('content_review', trans('content.book_title')) }}
+                                        {{ Form::text('book_title', null, ['class' => 'form-control']) }}
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        {{ Form::textarea('name', null, ['class' => 'form-control']) }}
+                                        {{ Form::label('content_review', trans('content.content')) }}
+                                        {{ Form::textarea('content', null, ['class' => 'form-control']) }}
                                     </div>
                                 </div>
                                 <div class="col-12">

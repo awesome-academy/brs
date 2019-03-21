@@ -17,10 +17,11 @@ class CreateBooksTable extends Migration
             $table->bigIncrements('id');
             $table->string('book_title');
             $table->string('author');
+            $table->string('image_name');
+            $table->string('image_path');
             $table->date('publication_date');
             $table->integer('number_page');
             $table->integer('category_id');
-            $table->integer('image_id');
             $table->timestamps();
         });
     }
