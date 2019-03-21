@@ -11,11 +11,12 @@ class Image extends Model
     protected $fillable = [
         'id',
         'image_path',
+        'name',
     ];
 
     public function book()
     {
 
-        return $this->belongTo(App::Book);
+        return $this->belongsTo(Book::class);
     }
 }
