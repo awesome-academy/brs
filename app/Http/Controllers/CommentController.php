@@ -3,34 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Categories;
 use App\Model\Review;
-use App\Model\Book;
 use App\Model\Activities;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
-use DB;
 
-class PublicController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct()
-    {
-        $categories = Categories::all();
-        View::share('categories', $categories);
-    }
-
     public function index()
     {
-        $books = Review::select('book_title', 'content_review')
-        ->join('books', 'books.id', '=', 'reviews.book_id')->get();
-
-        return view('public.app.index', compact('books'));
+        //
     }
 
     /**
@@ -38,14 +24,9 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function bookCategory($id)
+    public function create()
     {
-        $book_cate = DB::table('books')
-        ->select('books.*', 'reviews.*')
-        ->join('reviews', 'books.id', '=', 'reviews.book_id')
-        ->where('books.category_id', $id)->paginate(config('setting.pagination'));
-
-        return view('public.app.category', compact('book_cate'));
+        //
     }
 
     /**
@@ -56,7 +37,14 @@ class PublicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $activities = new Activities;
+        $activities->body_comment = $request->body_comment;
+        $activities->user_id = Auth::user()->id;
+
+        $review = Review::find($request->review_id);
+        $review->comments()->save($activities);
+
+        return back();
     }
 
     /**
@@ -67,15 +55,7 @@ class PublicController extends Controller
      */
     public function show($id)
     {
-        $detail = DB::table('books')
-        ->select('books.*', 'reviews.*')
-        ->join('reviews', 'books.id', '=', 'reviews.book_id')
-        ->where('books.id', $id)->first();
-
-        $activities= Review::find($id);
-
-
-        return view('public.app.detail', compact('detail', 'activities'));
+        //
     }
 
     /**

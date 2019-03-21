@@ -53,13 +53,23 @@
                 </div>
 
                 <ol>
+                    @foreach($activities->comments as $comment)
                     <li class="single_comment_area">
                         <div class="comment-content d-flex">
                             <div class="comment-author">
-                                <img src="img/bg-img/53.jpg" alt="author">
+                            </div>
+                            <div class="comment-meta">
+                                <a href="#" class="comment-date">{{ $comment->updated_at }}</a>
+                                <h6>{{ $comment->user->name }}</h6>
+                                <p>{{ $comment->body_comment }}</p>
+                                <div class="d-flex align-items-center">
+                                    <a href="#" class="like">@lang('content.like')</a>
+                                    <a href="#" class="reply">@lang('content.reply')</a>
+                                </div>
                             </div>
                         </div>
                     </li>
+                    @endforeach
                 </ol>
             </div>
 
@@ -69,16 +79,11 @@
                 </div>
 
                 <div class="contact-form-area">
-                    {!! Form::open(['method' => 'POST']) !!}
+                    {!! Form::open(['route' => 'comment.add', 'method' => 'POST']) !!}
                         <div class="row">
-                            <div class="col-12 col-lg-6">
-                                {{ Form::text('name', null, ['class' => 'form-control']) }}
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                {{ Form::text('name', null, ['class' => 'form-control']) }}
-                            </div>
                             <div class="col-12">
-                                {{ Form::textarea('name', null, ['class' => 'form-control']) }}
+                                {{ Form::textarea('body_comment', null, ['class' => 'form-control']) }}
+                                {{ Form::hidden('review_id', $detail->book_id, ['id' => 'invisible_id']) }}
                             </div>
                             <div class="col-12">
                                 {!! Form::submit( trans('content.conmment'), ['class' => 'btn mag-btn mt-30']) !!}

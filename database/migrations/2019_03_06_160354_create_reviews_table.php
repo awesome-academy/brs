@@ -19,7 +19,6 @@ class CreateReviewsTable extends Migration
             $table->integer('user_id');
             $table->tinyInteger('status');
             $table->string('content_review');
-            $table->integer('activities_id')->nullable();
             $table->timestamps();
         });
     }
