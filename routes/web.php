@@ -31,3 +31,10 @@ Route::get('/ajax', 'BookReviewController@ajax');
 Route::resource('add', 'BookReviewController');
 
 Route::post('/comment', 'CommentController@store')->name('comment.add');
+
+Route::resource('admin/add', 'BooksController');
+
+Route::post('/admin/add', [
+    'as' => 'addb',
+    'uses' => 'BooksController@store'
+]);

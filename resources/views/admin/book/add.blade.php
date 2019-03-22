@@ -9,20 +9,26 @@
                 </h1>
             </div>
             <div class="col-lg-7">
-                {!! Form::open(['method' => 'POST']) !!}
+                {!! Form::open(['route' => 'addb', 'method' => 'POST', 'files' => true]) !!}
                     <div class="form-group">
-                        {{ Form::label('book-name', trans('content.name_book')) }}
-                        {{ Form::text('name', null, ['class' => 'form-control']) }}
+                        {{ Form::label('book_title', trans('content.name_book')) }}
+                        {{ Form::text('book_title', null, ['class' => 'form-control']) }}
                     </div>
                     <div class="form-group">
-                        {{ Form::label('task-name', trans('content.review')) }}
-                        {!! Form::textarea('name', '', ['class' => 'form-control']) !!}
+                        {{ Form::label('author', trans('content.author')) }}
+                        {{ Form::text('author', null, ['class' => 'form-control']) }}
                     </div>
                     <div class="form-group">
-                        {{ Form::label('task-name', trans('content.status')) }}
-                        {!! Form::radio('name', '1', true, ['class' => 'radio-inline']) !!}
-                        {{ Form::label('task-name', trans('content.status')) }}
-                        {!! Form::radio('name', '2', false, ['class' => 'radio-inline']) !!}
+                        {{ Form::label('number_page', trans('content.number_page')) }}
+                        {{ Form::text('number_page', null, ['class' => 'form-control']) }}
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('content.book', trans('content.book')) }}
+                        {{ Form::select('category_id', $select, null, ['class'=>'form-control']) }}
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('content.image', trans('content.image')) }}
+                        {{ Form::file('image', ['class' => 'name']) }}
                     </div>
                     {!! Form::submit( trans('content.add'), ['class' => 'btn btn-default']) !!}
                     {!! Form::reset(trans('content.reset'), ['class' => 'btn btn-default']) !!}
