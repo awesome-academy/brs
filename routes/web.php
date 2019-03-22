@@ -31,3 +31,6 @@ Route::get('/ajax', 'BookReviewController@ajax');
 Route::resource('add', 'BookReviewController');
 
 Route::post('/comment', 'CommentController@store')->name('comment.add');
+
+Route::get('/user/activation/{token}',
+    '\Auth\RegigterController@userActivation');
