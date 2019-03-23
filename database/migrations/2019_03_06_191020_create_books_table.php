@@ -20,7 +20,9 @@ class CreateBooksTable extends Migration
             $table->date('publication_date');
             $table->integer('number_page');
             $table->integer('category_id');
-            $table->integer('image_id');
+            $table->string('image_name');
+            $table->string('image_path');
+            $table->string('content_book');
             $table->timestamps();
         });
     }
