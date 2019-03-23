@@ -17,12 +17,9 @@ class CreateActivitiesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('body_comment')->nullable();
-            $table->integer('commentable_id')->nullable();
-            $table->string('commentable_type')->nullable();
-            $table->integer('likeable_id')->nullable();
-            $table->string('likeable_type')->nullable();
-            $table->integer('ratingable_id')->nullable();
-            $table->string('ratingable_type')->nullable();
+            $table->integer('rating')->nullable();
+            $table->integer('activities_id')->nullable();
+            $table->string('activities_type')->nullable();
             $table->timestamps();
         });
     }

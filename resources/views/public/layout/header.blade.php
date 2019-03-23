@@ -18,8 +18,7 @@
 
                         <div class="classynav">
                             <ul>
-                                <li class="active"><a href="index.html">@lang('content.home')</a></li>
-                                <li><a href="archive.html">@lang('content.archive')</a></li>
+                                <li class="active"><a href="/book">@lang('content.home')</a></li>
                                 @foreach($categories as $cate)
                                     @if($cate->parent_id == config('setting.number_default'))
                                         <li><a href="{{ route('category', [$cate->id]) }}">{{ $cate->cate_name }}</a>
@@ -35,7 +34,7 @@
                                     @endif
                                 @endforeach
                                 <li><a href="#">@lang('content.profile')</a></li>
-                                <li><a href="#">@lang('content.suggest')</a></li>
+                                <li><a href="/suggest">@lang('content.suggest')</a></li>
                             </ul>
                         </div>
                     </div>
@@ -48,8 +47,8 @@
                             </form>
                         </div>
 
-                        <a href="#" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
-                        <a href="#" class="submit-video"><span><i class="fa fa-cloud-upload"></i></span><span class="video-text">@lang('content.submit')</span></a>
+                        <a href="/login" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+                        <a href="/add" class="submit-video"><span><i class="fa fa-cloud-upload"></i></span><span class="video-text">@lang('content.submit')</span></a>
                     </div>
                 </div>
             </nav>

@@ -31,3 +31,12 @@ Route::get('/ajax', 'BookReviewController@ajax');
 Route::resource('add', 'BookReviewController');
 
 Route::post('/comment', 'CommentController@store')->name('comment.add');
+
+Route::get('/book/{id}', [
+    'as' => 'book.detail',
+    'uses' => 'PublicController@show'
+]);
+
+Route::resource('suggest', 'ContactController');
+
+Route::post('/send', 'ContactController@store')->name('mail.send');

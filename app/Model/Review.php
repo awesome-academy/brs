@@ -14,7 +14,6 @@ class Review extends Model
         'user_id',
         'status',
         'content_review',
-        'activities_id',
     ];
 
     public function book()
