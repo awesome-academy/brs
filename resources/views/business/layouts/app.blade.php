@@ -19,7 +19,11 @@
     {{ Html::style('/business_asset/css/default.css') }}
     {{ Html::style('/business_asset/style.css') }}
     {{ Html::style('/business_asset/css/responsive.css') }}
-    {{ Html::style('/business_asset/js/vendor/modernizr-3.5.0.min.js') }}
+    {{ Html::script(asset('/business_asset/js/vendor/modernizr-3.5.0.min.js')) }}
+    {{ Html::style('/business_asset/star.css') }}
+    {{ Html::style('/business_asset/form.css') }}
+    {{ Html::style('/business_asset/star-rating.css') }}
+    {{ Html::style('/business_asset/font-awesome.min.css') }}
     <link rel="shortcut icon" href="/business_asset/img/favicon.ico">
 </head>
 
@@ -48,6 +52,7 @@
     {{ Html::script(asset('business_asset/js/bootstrap.min.js')) }}
     {{ Html::script(asset('business_asset/js/plugins.js')) }}
     {{ Html::script(asset('business_asset/js/main.js')) }}
+    {{ Html::script(asset('business_asset/form.js')) }}
 
 </body>
 

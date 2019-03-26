@@ -46,9 +46,31 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="cart-box mt-all-30">
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
-                            <li><a href="#"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">2</span><span>@lang('content.wishlist')</span></span></a>
-                            </li>
-                            <li><a href="#"><i class="lnr lnr-heart"></i><span class="my-cart"><span>@lang('content.wishlist')</span><span>@lang('content.wishlist')</span></span></a>
+                            <li><a href="#"><i class="lnr lnr-heart"></i><span class="my-cart"><span class="total-pro"></span><span>Wishlist</span></span></a>
+                                <ul class="ht-dropdown cart-box-width">
+                                    <li>
+                                        @foreach($content as $item)
+                                            <div class="single-cart-box">
+                                                <div class="cart-img">
+                                                    <a href="#"><img src="img/products/1.jpg" alt="cart-image"></a>
+                                                    <span class="pro-quantity">1X</span>
+                                                </div>
+                                                <div class="cart-content">
+                                                    <h6><a href="{{ $item->options }}">{{ $item->name }}</a></h6>
+                                                    <span class="cart-price">27.45</span>
+                                                    <span>Size: S</span>
+                                                    <span>Color: Yellow</span>
+                                                </div>
+                                                <a class="del-icone" href="{{ route('delwish', $item->id) }}"><i class="ion-close"></i></a>
+                                            </div>
+                                        @endforeach
+                                        <div class="cart-footer">
+                                            <div class="cart-actions text-center">
+                                                <a class="cart-checkout" href="{{ route('listwish') }}">View</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                             <li><a href="#"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>@lang('content.sign_in')</strong></a>
                             </li>
@@ -70,11 +92,11 @@
                         <ul class="header-bottom-list d-flex">
                             @foreach($categories as $cate)
                                 @if($cate->parent_id == config('setting.number_default'))
-                                <li><a href="index.html">{{ $cate->cate_name }}<i class="fa fa-angle-down"></i></a>
+                                <li><a href="{{ route('category', [$cate->id]) }}">{{ $cate->cate_name }}<i class="fa fa-angle-down"></i></a>
                                     <ul class="ht-dropdown">
                                         @foreach($categories as $cate_parent)
                                             @if($cate_parent->parent_id == $cate->id)
-                                            <li><a href="index.html">{{ $cate_parent->cate_name }}</a></li>
+                                            <li><a href="{{ route('category', [$cate_parent->id]) }}">{{ $cate_parent->cate_name }}</a></li>
                                             @endif
                                         @endforeach
                                     </ul>
