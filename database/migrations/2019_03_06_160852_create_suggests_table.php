@@ -18,8 +18,7 @@ class CreateSuggestsTable extends Migration
             $table->string('content');
             $table->string('author');
             $table->string('book_title');
-            $table->tinyInteger('status');
-            $table->integer('user_id');
+            $table->string('mail');
             $table->timestamps();
         });
     }

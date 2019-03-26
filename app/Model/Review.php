@@ -14,7 +14,7 @@ class Review extends Model
         'user_id',
         'status',
         'content_review',
-        'activities_id',
+        'rating_point',
     ];
 
     public function book()
@@ -32,24 +32,6 @@ class Review extends Model
     public function activities()
     {
 
-        return $this->hasMany(Activities::class);
-    }
-
-    public function comments()
-    {
-
-        return $this->morphMany(Activities::class, 'commentable');
-    }
-
-    public function likes()
-    {
-
-        return $this->morphMany(Activities::class, 'likeable');
-    }
-
-    public function ratings()
-    {
-
-        return $this->morphMany(Activities::class, 'ratingable');
+        return $this->morphMany(Activities::class, 'activityable');
     }
 }

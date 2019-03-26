@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/book', 'PublicController');
-
 Route::get('/category/{id}', [
     'as' => 'category',
     'uses' => 'PublicController@bookCategory'
@@ -35,3 +33,5 @@ Route::post('/comment', 'CommentController@store')->name('comment.add');
 Route::resource('suggest', 'RequestBookController');
 
 Route::post('/send', 'RequestBookController@store')->name('mail.send');
+
+Route::resource('/book', 'ReviewBookController');
