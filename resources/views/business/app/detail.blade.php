@@ -67,7 +67,6 @@
                                 <h4 class="review-mini-title">@lang('content.title')</h4>
                                 <ul class="review-list">
                                     <li>
-                                        <span>@lang('content.rating')</span>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -77,6 +76,37 @@
                                     </li>
                                 </ul>
                                 <p>{{ $review->content_review }}</p>
+                                <p>
+                                    {!! Form::open(['route' => ['book.destroy', $review->id], 'method' => 'DELETE', 'files' => true]) !!}
+                                        {!! Form::submit( trans('content.delete'), ['class' => 'btn btn-primary']) !!}
+                                    {!! Form::close() !!}
+                                </p>
+                                <p>
+                                {{ Form::button('Edit', ['id' => 'Mybtn', 'class' => 'btn btn-primary']) }}
+                                {!! Form::open(['route' => ['book.update', $review->id], 'method' => 'PUT', 'id' => 'MyForm']) !!}
+                                    <div class="rating">
+                                        {{ Form::radio('rating_point', '5', null, ['id' => 'star5']) }}
+                                        {{ Form::label('star5', null) }}
+                                        {{ Form::radio('rating_point', '4', null, ['id' => 'star4']) }}
+                                        {{ Form::label('star4', null) }}
+                                        {{ Form::radio('rating_point', '3', null, ['id' => 'star3']) }}
+                                        {{ Form::label('star3', null) }}
+                                        {{ Form::radio('rating_point', '2', null, ['id' => 'star2']) }}
+                                        {{ Form::label('star2', null) }}
+                                        {{ Form::radio('rating_point', '1', null, ['id' => 'star1']) }}
+                                        {{ Form::label('star1', null) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ Form::hidden('book_id', $detail->book_id) }}
+                                        {{ Form::hidden('status', config('setting.number_default')) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ Form::label('content', trans('content.content')) }}
+                                        {{ Form::textarea('content_review', null, ['class' => 'form-control']) }}
+                                    </div>
+                                    {!! Form::submit( trans('content.edit'), ['class' => 'return-customer-btn']) !!}
+                                {!! Form::close() !!}
+                                </p>
                             </div>
                         @endforeach
 
@@ -86,23 +116,32 @@
                             <ul class="review-list">
                                 <li>
                                     <span></span>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
+                                    <h1>@lang('content.rating')</h1>
                                 </li>
                             </ul>
 
                             <div class="riview-field mt-40">
-                                {!! Form::open(['method' => 'POST','files' => true]) !!}
+                                {!! Form::open(['route' => 'book.store','method' => 'POST']) !!}
                                     <div class="form-group">
-                                        {{ Form::label('name', trans('content.name'), ['class' => 'req']) }}
-                                        {{ Form::text('name', null, ['class' => 'form-control']) }}
+                                        {{ Form::hidden('book_id', $detail->book_id) }}
+                                        {{ Form::hidden('status', config('setting.number_default')) }}
+                                        <div class="stars">
+                                            {{ Form::radio('rating_point', '5', null, ['id' => 'star-5', 'class' => 'star star-5']) }}
+                                            {{ Form::label('star-5', null, ['class' => 'star star-5']) }}
+                                            {{ Form::radio('rating_point', '4', null, ['id' => 'star-4', 'class' => 'star star-4']) }}
+                                            {{ Form::label('star-4', null, ['class' => 'star star-4']) }}
+                                            {{ Form::radio('rating_point', '3', null, ['id' => 'star-3', 'class' => 'star star-3']) }}
+                                            {{ Form::label('star-3', null, ['class' => 'star star-3']) }}
+                                            {{ Form::radio('rating_point', '2', null, ['id' => 'star-2', 'class' => 'star star-2']) }}
+                                            {{ Form::label('star-2', null, ['class' => 'star star-2']) }}
+                                            {{ Form::radio('rating_point', '1', null, ['id' => 'star-1', 'class' => 'star star-1']) }}
+                                            {{ Form::label('star-1', null, ['class' => 'star star-1']) }}
+                                        </div>
+                                    </div>
                                     </div>
                                     <div class="form-group">
                                         {{ Form::label('content', trans('content.content')) }}
-                                        {{ Form::textarea('content', null, ['class' => 'form-control']) }}
+                                        {{ Form::textarea('content_review', null, ['class' => 'form-control']) }}
                                     </div>
                                     {!! Form::submit( trans('content.add_task'), ['class' => 'return-customer-btn']) !!}
                                 {!! Form::close() !!}

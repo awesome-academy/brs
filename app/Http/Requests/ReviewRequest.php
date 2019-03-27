@@ -26,9 +26,9 @@ class ReviewRequest extends FormRequest
         return [
             'content_review' => 'required|min:50',
             'book_id' => 'required',
-            'status' => 'required',
-            'category_id' => 'required',
             'user_id' => 'required',
+            'rating_point' => 'required',
+            'status' => 'required',
         ];
     }
 }
