@@ -35,3 +35,13 @@ Route::resource('suggest', 'RequestBookController');
 Route::post('/send', 'RequestBookController@store')->name('mail.send');
 
 Route::resource('/book', 'ReviewBookController');
+
+Route::get('/book/{id}/{name_book}', [
+    'as' => 'wishlist',
+    'uses' => 'ReviewBookController@addWish'
+]);
+
+Route::get('/book/delete/{id}', [
+    'as' => 'delwish',
+    'uses' => 'ReviewBookController@deleteWish'
+]);
