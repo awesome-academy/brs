@@ -8,6 +8,7 @@ use App\Model\Review;
 use App\Model\Book;
 use App\Model\Categories;
 use Illuminate\Support\Facades\View;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ReviewBookController extends Controller
 {
@@ -26,7 +27,9 @@ class ReviewBookController extends Controller
     {
         $books = DB::table('books')->orderBy('id', 'DESC')->paginate(config('setting.pagination'));
 
-        return view('business.app.index', compact('books'));
+        $content = Cart::content();
+
+        return view('business.app.index', compact('books', 'content'));
     }
 
     /**
@@ -98,4 +101,22 @@ class ReviewBookController extends Controller
     {
         //
     }
+
+    public function deleteWish($id)
+    {
+        Cart::destroy($id);
+
+        return redirect()->back();
+    }
+
+    public function addWish($id)
+    {
+        $book_wishlist = DB::table('books')->where('id', $id)->first();
+        Cart::add(array('id' => $id, 'name' => $book_wishlist->book_title, 'qty' => 1, 'price' => 0, 'options' => array('image_path' => $book_wishlist->image_path)));
+        $content = Cart::content();
+
+        return redirect()->back();
+    }
+
+
 }

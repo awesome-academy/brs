@@ -14,6 +14,7 @@
                             <h4><a href="">{{ $book->book_title }}</a></h4>
                             <p>{{ $book->author }}</p>
                             <a class="readmore" href="single-blog.html">@lang('content.readmore')</a>
+                            <a class="readmore" href="{{ route('wishlist', [$book->id, $book->book_title]) }}">@lang('content.add_wishlist')</a>
                         </div>
                         <div class="blog-date">
                             <span>{{ $book->publication_date }}</span>
