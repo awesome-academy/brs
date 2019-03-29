@@ -35,3 +35,5 @@ Route::resource('suggest', 'RequestBookController');
 Route::post('/send', 'RequestBookController@store')->name('mail.send');
 
 Route::resource('/book', 'ReviewBookController');
+
+Route::resource('admin/books', 'Admin\BooksController');
